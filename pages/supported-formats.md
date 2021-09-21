@@ -8,8 +8,6 @@ sidebar: mydoc_sidebar
 permalink: supported-formats.html
 ---
 
-# Supported formats
-
 The wttr.in API can return data in the following formats.
 
 - ANSI sequences (for console HTTP clients, including curl, httpie, and wget)

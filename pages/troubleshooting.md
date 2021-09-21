@@ -8,8 +8,6 @@ sidebar: mydoc_sidebar
 permalink: troubleshooting.html
 ---
 
-# Troubleshooting issues
-
 The following issues may occur when using the wttr.in API.
 
 ## Non-valid characters in the output
@@ -35,7 +33,9 @@ You can resolve this issue using one of the following workarounds.
 
 - Replace the diagonal wind direction characters in the response data with forward and back slashes prior to rendering the output, as shown below.
 
-    ```
+    ```js
+// Retrieve weather forecast data
 $w = (curl wttr.in -UserAgent curl).Content;
+// Replace wind direction characters in the data
 $formattedWeather = $w.Substring(0, $w.lastIndexOf($([char]0x2518)) + 1).replace($([char]0x2196), $([char]0x005C)).replace($([char]0x2197), $([char]0x002F)).replace($([char]0x2198), $([char]0x005C)).replace($([char]0x2199), $([char]0x002F));
     ```
